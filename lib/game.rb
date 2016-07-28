@@ -32,6 +32,11 @@ class Game
     return board_str
   end
 
+  def add_cell(col_index, cell)
+    target_col = @board[col_index]
+    target_col.size < 6 ? target_col << cell : "FullColumn!"
+  end
+
   private
   # Return an array where each array represents a row-column
   def row_shift(board)
